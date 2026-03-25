@@ -1,0 +1,18 @@
+version: '3.8'
+
+
+services:
+  app:
+    env_file:
+      - .env.dev
+    volumes:
+      - ./app:/app
+
+
+  db:
+    env_file:
+      - .env.dev
+
+
+  redis:
+    command: redis-server --loglevel verbose
